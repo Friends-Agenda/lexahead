@@ -8,16 +8,16 @@
   "plain": 10671
  },
  "commit_kinds": {
-  "amendment": 7,
+  "amendment": 8,
   "consolidated": 6669,
   "enacted": 4447,
   "repeal": 4417
  },
  "documents": 11437,
  "files_in_force": 108529,
- "future_commits": 497,
+ "future_commits": 496,
  "future_kinds": {
-  "amendment": 438,
+  "amendment": 437,
   "enacted": 37,
   "repeal": 18,
   "unexplained": 4
@@ -27,11 +27,11 @@
  "in_force": 5303,
  "issues": 392,
  "left_out": 284,
- "main_commits": 15541,
- "record_to": "2026-11-03",
+ "main_commits": 15542,
+ "record_to": "2026-11-06",
  "repealed": 5813,
  "requests": 23898,
- "retrieved": "2026-11-05",
- "today": "2026-11-05",
+ "retrieved": "2026-11-06",
+ "today": "2026-11-06",
  "undated_markers": 623
 }
