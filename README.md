@@ -1,5 +1,7 @@
 # Swedish statutes (SFS), as a git repository
 
+Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Sweden's national law, which global-law reads at `sweden/national/acts/`.
+
 The statutes of Sweden published in Svensk författningssamling (SFS), as consolidated by the Government Offices
 (Regeringskansliet, SFST) and published as open data by the Riksdag: 5304 statutes in force on `main`, from the
 Regeringsform (`1974/152`), Brottsbalk (`1962/700`) and Rättegångsbalk (`1942/740`) to the newest
