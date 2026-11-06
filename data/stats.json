@@ -4,17 +4,17 @@
  "built": 11153,
  "classes": {
   "as-printed": 42,
-  "dated-versions": 440,
-  "plain": 10671
+  "dated-versions": 438,
+  "plain": 10673
  },
  "commit_kinds": {
-  "amendment": 8,
+  "amendment": 6,
   "consolidated": 6669,
   "enacted": 4447,
   "repeal": 4417
  },
  "documents": 11437,
- "files_in_force": 108529,
+ "files_in_force": 108517,
  "future_commits": 496,
  "future_kinds": {
   "amendment": 437,
@@ -27,7 +27,7 @@
  "in_force": 5303,
  "issues": 392,
  "left_out": 284,
- "main_commits": 15542,
+ "main_commits": 15540,
  "record_to": "2026-11-06",
  "repealed": 5813,
  "requests": 23898,

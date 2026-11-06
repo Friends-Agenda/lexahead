@@ -14,4 +14,4 @@ amendment) is not appended; it waits for a correction. data/refresh.csv lists ev
 
 The `future` branch is the one built on 2026-10-28; texts it holds reach `main` on their day through these refreshes.
 
-Refreshes so far: 2; the last on 2026-11-06, appending 1 statutes in 1 commits.
+Refreshes so far: 3; the last on 2026-11-06, appending 2 statutes in 2 commits.
