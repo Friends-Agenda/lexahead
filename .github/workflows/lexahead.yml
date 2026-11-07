@@ -7,7 +7,7 @@ on:
   schedule:
     # Hourly. Builds only when upstream (lexifina/sweden-law), this code, or the date has changed,
     # so a new data release goes live within the hour and "om X dagar" is right every morning.
-    - cron: "17 * * * *"
+    - cron: "17 2 * * *"  # once a night (03:17/04:17 Swedish time): picks up upstream changes and rolls dates
 
 permissions:
   contents: write   # sync the fork's main/future with upstream

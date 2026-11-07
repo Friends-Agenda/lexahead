@@ -77,7 +77,7 @@ anger också källarkivets commit för `main` och `future`, kodens commit och n�
 4. Actions-fliken: aktivera arbetsflöden (de är avstängda som standard i forkar).
 5. Kör arbetsflödet *lexAhead* en gång manuellt.
 
-Arbetsflödet körs varje timme men bygger bara om källan, koden eller datumet ändrats. Det synkar också forkens
+Arbetsflödet körs en gång per natt (och vid push) men bygger bara om källan, koden eller datumet ändrats. Det synkar också forkens
 `main`/`future` med originalet och håller schemat vid liv (GitHub pausar annars schemat efter 60 dagar).
 
 ## Tillgänglighet

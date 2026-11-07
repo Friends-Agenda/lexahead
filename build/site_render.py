@@ -244,6 +244,7 @@ class Site:
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:locale" content="sv_SE">
 <meta name="generator" content="lexAhead {esc(v['version'])}">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 </head>
 <body>
 <a class="skip" href="#innehall">Hoppa till innehållet</a>
@@ -251,6 +252,7 @@ class Site:
   <div class="wrap site-header__inner">
     <a class="wordmark" href="{self.href()}" aria-label="lexAhead, startsida"><span aria-hidden="true">lex<b>Ahead</b><i class="wordmark__arrow">→</i></span></a>
     <nav aria-label="Huvudmeny"><ul class="nav">{links}</ul></nav>
+    <button class="theme-toggle" type="button" hidden></button>
   </div>
 </header>
 <main id="innehall" tabindex="-1">
@@ -323,9 +325,10 @@ class Site:
                  f'<tbody>{board_rows}</tbody></table></div></div>') if up else ""
 
         # horizon: one bar per month with changes, height by number of acts
-        months = defaultdict(int)
+        months, first = defaultdict(int), {}
         for x in up:
             months[x[:7]] += len(dates[x])
+            first.setdefault(x[:7], x)
         peak = max(months.values(), default=1)
         bars, last_year, prev_idx = [], None, None
         for ym, n in months.items():
@@ -338,17 +341,14 @@ class Site:
             year_mark = f'<span class="horizon__year" aria-hidden="true">{y}</span>' if y != last_year else ""
             last_year = y
             h = max(6, round(100 * (n / peak) ** 0.5))
-            # not links: month bars are too narrow for a 24px target on phones; board and timeline navigate
-            bars.append(f'<li class="horizon__m" style="--h:{h}%">'
+            # links to the month's first day in the timeline; the strip scrolls sideways on phones to keep 24px targets
+            bars.append(f'<li class="horizon__m" style="--h:{h}%"><a class="horizon__link" href="#d-{first[ym]}">'
                         f'<span class="horizon__bar" aria-hidden="true"></span>'
                         f'<span class="horizon__label" aria-hidden="true">{MONTHS[int(mo) - 1][:3]}</span>'
-                        f'<span class="vh">{label}: {se.plural(n, "författning", "författningar")}</span>{year_mark}</li>')
+                        f'<span class="vh">{label}: {se.plural(n, "författning", "författningar")}</span></a>{year_mark}</li>')
         horizon = (f'<section class="horizon wrap" aria-labelledby="horizon-h"><h2 id="horizon-h" class="section-title">Horisonten</h2>'
-                   f'<p class="section-lead">Varje stapel är en månad där beslutade ändringar börjar gälla. Ju högre stapel, desto fler författningar.</p>'
-                   f'<ol class="horizon__strip">{"".join(bars)}</ol>'
-                   + (f'<p class="horizon__range" aria-hidden="true"><span>{esc(MONTHS[int(up[0][5:7]) - 1])} {up[0][:4]}</span>'
-                      f'<span>{esc(MONTHS[int(up[-1][5:7]) - 1])} {up[-1][:4]}</span></p>' if up else "")
-                   + '</section>')
+                   f'<p class="section-lead">Varje stapel är en månad där beslutade ändringar börjar gälla. Ju högre stapel, desto fler författningar. Välj en stapel för att gå till den månaden.</p>'
+                   f'<div class="horizon__scroll"><ol class="horizon__strip">{"".join(bars)}</ol></div></section>')
 
         all_depts = sorted({c["department"] for c in self.data["changes"] if c["department"]})
         options = "".join(f'<option value="{esc(x)}">{esc(x)}</option>' for x in all_depts)
@@ -561,12 +561,15 @@ journalister, forskare och organisationer kan bygga egna bevakningar på samma d
 Sist i varje paragraf står vilken författning som senast gav den dess lydelse, till exempel <span class="not-inline">Lag (2025:736).</span></p>
 <p>En <strong>lag</strong> beslutas av riksdagen. En <strong>förordning</strong> beslutas av regeringen. Under <em>Förarbeten</em> finns
 regeringens proposition och riksdagsutskottets betänkande, där skälen till ändringen står.</p>
+<p>För de flesta lagar visas också <strong>riksdagens sammanfattning</strong> av beslutet och hur partierna röstade. Texten är riksdagens
+egen, hämtad ur betänkandet, och citeras ordagrant. lexAhead skriver inga egna sammanfattningar och använder ingen AI för att förklara
+ändringar. Förordningar beslutas av regeringen utan omröstning i riksdagen och har därför ingen sådan sammanfattning.</p>
 <h2>Det här är inte en officiell tjänst</h2>
 <p>lexAhead ges inte ut av riksdagen eller Regeringskansliet. Uppgifterna kan vara ofullständiga eller försenade. Kontrollera alltid mot den
 officiella texten i Svensk författningssamling innan du fattar beslut.</p>
 <h2>Hur färsk är datan?</h2>
-<p>Datan kontrollerades mot källan {esc(long_date(c['checked_on']) if c.get('checked_on') else '–')}. Sidan byggs om automatiskt när
-lexifina/sweden-law uppdateras, och varje natt så att datum och "om X dagar" stämmer.</p>
+<p>Datan kontrollerades mot källan {esc(long_date(c['checked_on']) if c.get('checked_on') else '–')}. Sidan byggs om automatiskt varje
+natt, med det senaste från lexifina/sweden-law, så att datum och "om X dagar" stämmer.</p>
 {self.facts([("Version", esc(v['version'])), ("Byggd", esc(v['built_at'])),
               ("Källdata (main)", f'<code>{esc(up.get("main", "")[:12])}</code>'),
               ("Källdata (future)", f'<code>{esc(up.get("future", "")[:12])}</code>')])}
@@ -577,7 +580,7 @@ lexifina/sweden-law uppdateras, och varje natt så att datum och "om X dagar" st
 <p>lexAhead ska gå att använda för alla. Målet är att uppfylla WCAG 2.2 på nivå AA: sidan fungerar med tangentbord och skärmläsare,
 utan JavaScript, med förstorad text och i mörkt läge. Ändringar markeras aldrig bara med färg. Om något inte fungerar för dig vill vi veta det.</p>
 <h2>Vem står bakom?</h2>
-<p>lexAhead är ett fristående projekt av Philip Lilius, senior rådgivare på <a href="https://www.friendsagenda.se">Friends Agenda</a>,
+<p>lexAhead är ett fristående projekt av Philip Lilius, senior rådgivare digitalisering på <a href="https://www.friendsagenda.se">Friends Agenda</a>,
 byggt för att göra kommande lagändringar lättare att följa för alla.
 Mer om mig och andra projekt finns på <a href="https://philip.lilius.io">philip.lilius.io</a>.</p>
 <h2>Typsnitt</h2>

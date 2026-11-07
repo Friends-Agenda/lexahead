@@ -10,6 +10,7 @@
 @font-face { font-family: "Plex Mono"; src: url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2"); font-weight: 500; font-display: swap; }
 
 :root {
+  color-scheme: light;
   --sans: "Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "Plex Serif", Charter, Georgia, serif;
   --mono: "Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -33,8 +34,10 @@
   --tag-new-ink: #1d3489;
 }
 
+/* dark: follows the system unless the visitor picked a theme (data-theme set by the toggle) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --paper: #0e1115;
     --soft: #171b21;
     --ink: #e7e9ed;
@@ -51,6 +54,24 @@
     --tag-new: #1d2748;
     --tag-new-ink: #c3d0ff;
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e1115;
+  --soft: #171b21;
+  --ink: #e7e9ed;
+  --ink-2: #a8afba;
+  --line: #2b313a;
+  --link: #a5b9ff;
+  --focus: #f5c242;
+  --ins-bg: #123620;
+  --ins-ink: #93e2ab;
+  --del-bg: #3e1714;
+  --del-ink: #ffaba3;
+  --board-bg: #1a1f27;
+  --board-edge: #343b47;
+  --tag-new: #1d2748;
+  --tag-new-ink: #c3d0ff;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -128,20 +149,18 @@ abbr[title] { text-decoration: none; }
 
 /* horizon */
 .horizon { padding-block: 2.5rem 1rem; }
-.horizon__strip { list-style: none; margin: 1.25rem 0 0; padding: 0 0 1.6rem; display: flex; align-items: flex-end; gap: 3px; height: 9.5rem; border-bottom: 2px solid var(--ink); position: relative; }
-.horizon__m { flex: 1 1 0; min-width: 0; height: 100%; position: relative; display: flex; flex-direction: column; justify-content: flex-end; color: var(--ink-2); }
+.horizon__scroll { overflow-x: auto; padding-bottom: 1.4rem; }
+.horizon__strip { list-style: none; margin: 1.25rem 0 0; padding: 0 0 1.6rem; display: flex; align-items: flex-end; gap: 3px; height: 9.5rem; min-width: max-content; border-bottom: 2px solid var(--ink); position: relative; }
+/* min 1.5rem wide = 24px target; on phones the strip scrolls sideways instead of shrinking */
+.horizon__m { flex: 1 0 1.5rem; height: 100%; position: relative; color: var(--ink-2); }
+.horizon__link { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; color: inherit; text-decoration: none; }
 .horizon__bar { display: block; height: var(--h); min-height: 4px; background: var(--ink); border-radius: 2px 2px 0 0; }
+.horizon__link:hover .horizon__bar { background: var(--link); }
 .horizon__m:first-child .horizon__bar { background: var(--signal); outline: 1px solid var(--ink); outline-offset: -1px; }
 .horizon__label { position: absolute; top: calc(100% + 0.3rem); left: 0; right: 0; text-align: center; font: 500 0.7rem/1 var(--mono); }
 .horizon__year { position: absolute; top: calc(100% + 1.55rem); left: 0; font: 500 0.75rem/1 var(--mono); color: var(--ink); white-space: nowrap; border-left: 1px solid var(--ink); padding-left: 0.25rem; }
 .horizon__m:last-child .horizon__year { left: auto; right: 0; border-left: 0; border-right: 1px solid var(--ink); padding: 0 0.25rem 0 0; }
 .horizon__gap { flex: 0 0 auto; align-self: flex-end; color: var(--ink-2); font: 500 0.9rem/1 var(--mono); padding: 0 0.15rem 0.2rem; }
-.horizon__range { display: none; }
-@media (max-width: 48rem) {
-  .horizon__label, .horizon__year { display: none; }
-  .horizon__strip { padding-bottom: 0; }
-  .horizon__range { display: flex; justify-content: space-between; margin: 0.4rem 0 0; font: 500 0.75rem/1 var(--mono); color: var(--ink-2); }
-}
 
 /* filter */
 .filter { display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem 1rem; align-items: end; padding: 1rem; background: var(--soft); border-radius: 6px; margin-bottom: 1.5rem; }
@@ -263,3 +282,14 @@ del.whole { background: none; color: var(--ink-2); padding: 0; text-decoration-t
 .votes > li { border-top: 1px solid var(--line); padding-top: 0.5rem; margin-bottom: 0.75rem; }
 .votes__q { font-weight: 600; margin: 0 0 0.2rem; }
 .votes ul { margin: 0; }
+
+/* theme toggle */
+.site-header nav { margin-left: auto; }
+@media (max-width: 40rem) {
+  /* phones: toggle stays on the wordmark row, menu gets its own row */
+  .theme-toggle { order: 2; margin-left: auto; }
+  .site-header nav { order: 3; flex-basis: 100%; margin-left: 0; }
+}
+.theme-toggle { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 50%; cursor: pointer; }
+.theme-toggle:hover { border-color: var(--ink-2); }
+.theme-toggle svg { width: 1.15rem; height: 1.15rem; }
