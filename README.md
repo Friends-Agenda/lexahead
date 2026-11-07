@@ -44,6 +44,17 @@ bygget säger ifrån om fler slås på, så att URL-strukturen (t.ex. `/eu/...`)
 Varje ändring i `data/upcoming.json` har fältet `explanation: null`, och sidmallen har en plats för den
 (`Site.explanation`), tydligt märkt "Förklaring – inte lagtext". Den visas bara när fältet har innehåll.
 
+## Planerat
+
+- **Förklaringar i klarspråk** av vad varje ändring betyder (se ovan). Ska märkas tydligt som "inte lagtext".
+- **Diff för ändringar utan datum** (`/ej-satt-datum/`). I dag visas bara vilka paragrafer som berörs,
+  eftersom lexifina/sweden-law inte har med den nya lydelsen för bestämmelser som ska börja gälla
+  "den dag som regeringen bestämmer" (`data/undated.csv` har bara markörerna, och `main` har bara den nu gällande texten).
+  Idé: hämta den konsoliderade texten från data.riksdagen.se (`https://data.riksdagen.se/dokument/sfs-ÅÅÅÅ-NNN.html`),
+  där båda versionerna troligen står efter varandra med markörerna `/Upphör att gälla U:…/` och `/Träder i kraft I:…/`.
+  Plocka ut I-versionen och visa diffen på samma sätt som för daterade ändringar. Obekräftat: kontrollera först
+  att källan verkligen har båda versionerna.
+
 ## Versioner
 
 `ÅÅÅÅ.MM.DD.N`, till exempel `2026.11.07.1`, där N räknas upp vid flera byggen samma dag. `version.json`
