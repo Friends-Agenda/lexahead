@@ -1,0 +1,9 @@
+[
+  {
+    "id": "se/national/acts",
+    "adapter": "se",
+    "repo": "https://github.com/lexifina/sweden-law",
+    "repo_web": "https://github.com/lexifina/sweden-law",
+    "publish": true
+  }
+]

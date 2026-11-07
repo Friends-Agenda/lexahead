@@ -1,0 +1,88 @@
+name: lexAhead
+
+on:
+  push:
+    branches: [lexahead]
+  workflow_dispatch:
+  schedule:
+    # Hourly. Builds only when upstream (lexifina/sweden-law), this code, or the date has changed,
+    # so a new data release goes live within the hour and "om X dagar" is right every morning.
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write   # sync the fork's main/future with upstream
+  actions: write    # keep the schedule alive (GitHub pauses it after 60 days without activity)
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.check.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: pages
+        uses: actions/configure-pages@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild needed?
+        id: check
+        env:
+          PREVIOUS: ${{ steps.pages.outputs.base_url }}/version.json
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python build/build.py --check --previous "$PREVIOUS"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Unit tests
+        if: steps.check.outputs.changed == 'true'
+        run: python -m unittest discover -s build -v
+
+      - name: Build
+        if: steps.check.outputs.changed == 'true'
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          PREVIOUS: ${{ steps.pages.outputs.base_url }}/version.json
+        run: python build/build.py --previous "$PREVIOUS"
+
+      - if: steps.check.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Sync fork with upstream
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh repo sync "${{ github.repository }}" --branch main
+          gh repo sync "${{ github.repository }}" --branch future --force
+
+      - name: Keep schedule alive
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/lexahead.yml/enable"
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
