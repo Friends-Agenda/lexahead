@@ -240,7 +240,8 @@ del.whole { background: none; color: var(--ink-2); padding: 0; text-decoration-t
 .undated h2 { font-size: 1.2rem; margin-bottom: 0.2rem; }
 .unit-label { font-weight: 600; }
 .prose h2 { font-size: 1.3rem; margin-top: 2rem; }
-.prose p { max-width: 42em; }
+.prose p, .prose ul { max-width: 42em; }
+.prose li { margin-bottom: 0.6em; }
 
 /* footer */
 .site-footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-block: 1.5rem 3rem; font-size: 0.92rem; color: var(--ink-2); }

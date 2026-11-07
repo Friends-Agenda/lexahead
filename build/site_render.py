@@ -317,7 +317,7 @@ class Site:
             f'<td class="board__n">{len(dates[x])}</td></tr>'
             for x in up[:6])
         board = (f'<div class="board" role="region" aria-labelledby="board-caption"><div class="wrap">'
-                 f'<table class="board__table"><caption id="board-caption" class="board__caption">Nästa avgångar</caption>'
+                 f'<table class="board__table"><caption id="board-caption" class="board__caption">Kommande lagändringar</caption>'
                  f'<thead><tr><th scope="col">Träder i kraft</th><th scope="col">Vad</th><th scope="col"><abbr title="Antal författningar">Antal</abbr></th></tr></thead>'
                  f'<tbody>{board_rows}</tbody></table></div></div>') if up else ""
 
@@ -515,6 +515,23 @@ publicerade som öppna data av riksdagen på <a href="https://data.riksdagen.se/
 <p>Texterna är sammanställda som ett git-arkiv av <a href="{esc(c['repo'])}">lexifina/sweden-law</a>. Där ligger kommande ändringar på grenen
 <code>future</code>, daterade med den dag de börjar gälla. lexAhead läser den grenen och registret och gör om dem till de här sidorna.
 Ingenting tolkas eller skrivs om: texten är exakt som den publicerats.</p>
+<h2>Varför lagar i git?</h2>
+<p>Git är ett verktyg som programmerare använder för att hålla reda på varje ändring i en text: vad som ändrades,
+när och av vem. När lagarna läggs in på samma sätt blir det lättare att se hur de förändras.</p>
+<ul>
+<li><strong>Exakt vad som ändras.</strong> En ändringslag skrivs som instruktioner ("2 kap. 6 § ska ha följande lydelse")
+och visar bara den nya texten. För att se skillnaden måste man jämföra med den gamla. Git gör jämförelsen åt dig, ord för ord.</li>
+<li><strong>Varje ändring har ett datum och en avsändare.</strong> Varje ändring är en egen post som säger vilken dag den börjar
+gälla och vilken författning som beslutade den. Det går att följa från lagtexten tillbaka till beslutet.</li>
+<li><strong>Framtiden syns i förväg.</strong> Beslutade ändringar ligger på en egen gren, daterade framåt i tiden.
+Det är den lexAhead visar.</li>
+<li><strong>Kontrollerbart.</strong> Varje version har ett unikt fingeravtryck, så vem som helst kan kontrollera att texten
+här är densamma som i källan. Länken "Visa ändringen i källdatan" under varje ändring går direkt dit.</li>
+<li><strong>Öppet att bygga vidare på.</strong> Arkivet är fritt att ladda ner. lexAhead är ett exempel på vad man kan bygga;
+journalister, forskare och organisationer kan bygga egna bevakningar på samma data.</li>
+</ul>
+<p>En begränsning: källan sparar bara den senaste versionen av varje lag, inte äldre versioner. Historiken bakåt
+är därför ofullständig, medan de kommande ändringarna finns med i sin helhet.</p>
 <h2>Hur läser jag en ändring?</h2>
 {LEGEND}
 <p>Varje paragraf visas som den ser ut efter ändringen. Text som tas bort är <del>genomstruken</del>, text som läggs till är <ins>understruken</ins>.
