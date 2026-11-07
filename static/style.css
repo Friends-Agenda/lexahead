@@ -254,3 +254,12 @@ del.whole { background: none; color: var(--ink-2); padding: 0; text-decoration-t
   body { font-size: 11pt; }
   a { color: inherit; }
 }
+.small { font-size: 0.85rem; }
+.decision h2 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+.decision h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+.decision ul { padding-left: 1.2rem; }
+.votes li { margin-bottom: 0.35rem; }
+.decision .votes { list-style: none; padding: 0; }
+.votes > li { border-top: 1px solid var(--line); padding-top: 0.5rem; margin-bottom: 0.75rem; }
+.votes__q { font-weight: 600; margin: 0 0 0.2rem; }
+.votes ul { margin: 0; }

@@ -1,9 +1,14 @@
 """Swedish adapter for lexifina/sweden-law: SFS numbers, paragraf labels, the SFSR register
 (data/amendments.csv), and links to Riksdagen's open data and EUR-Lex."""
 import csv
+import functools
+import html
 import io
+import json
 import re
-from collections import defaultdict
+import subprocess
+from collections import Counter, defaultdict
+from pathlib import Path
 
 from lexifina import show
 
@@ -95,8 +100,12 @@ def changes(events, reg):
             units = []
             for f in files:
                 key, label = unit(f["path"][len(d) + 1:])
-                units.append({"key": key, "label": label, "op": f["op"],
-                              "before": clean(f["before"]), "after": clean(f["after"])})
+                before, after = clean(f["before"]), clean(f["after"])
+                if f["op"] == "modified" and before == after:
+                    continue  # only a marker moved (e.g. a repealed heading's marker sits in the previous § file)
+                units.append({"key": key, "label": label, "op": f["op"], "before": before, "after": after})
+            if not units:
+                continue
             units.sort(key=lambda u: u["key"])
             rows = reg["amend"].get((sfs, act), [])
             out.append({
@@ -156,6 +165,66 @@ def prep_links(prep):
     return out
 
 
+# --- riksdagen's own account of the decision -----------------------------------------------
+
+SAFE_TAG = re.compile(r"<(/?)(p|ul|ol|li)\b[^>]*>", re.I)
+
+
+def safe_notis(raw):
+    """Riksdagen's notis is HTML from an external source: keep only p/ul/ol/li, escape all text."""
+    out = []
+    for part in re.split(r"(<[^>]*>)", raw or ""):
+        if part.startswith("<"):
+            m = SAFE_TAG.fullmatch(part)
+            out.append(f"<{m.group(1)}{m.group(2).lower()}>" if m else "")  # attributes dropped
+        else:
+            out.append(html.escape(html.unescape(part)))
+    return "".join(out).strip()
+
+
+def vote_sides(table):
+    """Party rows -> {'Ja': [...], 'Nej': [...], 'Avstod': [...]} by each party's majority (absent ignored)."""
+    sides = defaultdict(list)
+    rows = (table or {}).get("table", {}).get("tbody", {}).get("tr", [])
+    for r in rows if isinstance(rows, list) else [rows]:
+        party, n = r.get("th"), [int(x or 0) for x in r.get("td", [])[:3]]
+        if party and party != "-" and sum(n):
+            sides[("Ja", "Nej", "Avstod")[n.index(max(n))]].append(party)
+    return dict(sides)
+
+
+@functools.lru_cache(maxsize=None)
+def _dokumentstatus(doc_id, cache):
+    path = Path(cache) / f"{doc_id}.json"
+    if not path.exists():
+        r = subprocess.run(["curl", "-sfL", "--max-time", "30", f"https://data.riksdagen.se/dokumentstatus/{doc_id}.json"],
+                           capture_output=True)
+        if r.returncode:
+            return None  # shortcut: network failure just omits the box; retried on the next build
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(r.stdout)
+    return json.loads(path.read_text())["dokumentstatus"]
+
+
+def decision(prep, cache):
+    """Riksdagen's plain-language notis and party votes for the betänkande named in `prep`, or None."""
+    m = re.search(r"(?i)bet\.\s*(\d{4}/\d{2}):(\w+)", prep or "")
+    code = m and riksmote_code(m.group(1))
+    d = code and _dokumentstatus(f"{code}01{m.group(2)}", str(cache))
+    if not d:
+        return None
+    info = {u["kod"]: u.get("text") or "" for u in (d.get("dokuppgift") or {}).get("uppgift", [])}
+    if not info.get("notis"):
+        return None
+    points = (d.get("dokutskottsforslag") or {}).get("utskottsforslag") or []
+    votes = [{"title": p["rubrik"], "sides": vote_sides(p["votering_sammanfattning_html"]),
+              "url": f"https://data.riksdagen.se/votering/{p['votering_id']}.html", "yes_won": p.get("vinnare") == "utskottet"}
+             for p in (points if isinstance(points, list) else [points])
+             if p.get("votering_id") and isinstance(p.get("votering_sammanfattning_html"), dict)]
+    return {"bet": f"{m.group(1)}:{m.group(2)}", "url": f"https://data.riksdagen.se/dokument/{code}01{m.group(2)}.html",
+            "headline": html.unescape(info.get("notisrubrik", "")), "notis": safe_notis(info["notis"]), "votes": votes}
+
+
 # --- plain-language summaries --------------------------------------------------------------
 
 def plural(n, one, many):
@@ -167,13 +236,25 @@ def summary(units):
     ops = defaultdict(int)
     for u in units:
         ops[u["op"]] += 1
-    parts = []
+    # headings ("## 3 kap. …", "### Rubrik") counted over the whole change, so a heading that only moves file is no change
+    heads = lambda key: Counter(l for u in units for l in (u.get(key) or "").splitlines() if l.startswith("#"))
+    gone, new = heads("before") - heads("after"), heads("after") - heads("before")
+    h_mod = min(sum(gone.values()), sum(new.values()))
+    h_gone, h_new = sum(gone.values()) - h_mod, sum(new.values()) - h_mod
+    verbs = {"ändrar": [], "inför": [], "tar bort": []}
     if ops["modified"]:
-        parts.append(f"ändrar {plural(ops['modified'], 'bestämmelse', 'bestämmelser')}")
+        verbs["ändrar"].append(plural(ops["modified"], "bestämmelse", "bestämmelser"))
     if ops["added"]:
-        parts.append(f"inför {plural(ops['added'], 'ny bestämmelse', 'nya bestämmelser')}")
+        verbs["inför"].append(plural(ops["added"], "ny bestämmelse", "nya bestämmelser"))
     if ops["removed"]:
-        parts.append(f"tar bort {plural(ops['removed'], 'bestämmelse', 'bestämmelser')}")
+        verbs["tar bort"].append(plural(ops["removed"], "bestämmelse", "bestämmelser"))
+    if h_mod:
+        verbs["ändrar"].append(plural(h_mod, "rubrik", "rubriker"))
+    if h_new:
+        verbs["inför"].append(plural(h_new, "ny rubrik", "nya rubriker"))
+    if h_gone:
+        verbs["tar bort"].append(plural(h_gone, "rubrik", "rubriker"))
+    parts = [f"{v} {' och '.join(nouns)}" for v, nouns in verbs.items() if nouns]
     if not parts:
         return ""
     text = ", ".join(parts[:-1]) + (" och " if len(parts) > 1 else "") + parts[-1]

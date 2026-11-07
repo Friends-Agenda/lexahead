@@ -74,6 +74,10 @@ class Swedish(unittest.TestCase):
         u = [{"op": "modified"}] * 3 + [{"op": "added"}] + [{"op": "removed"}] * 2
         self.assertEqual(se.summary(u), "Ändrar 3 bestämmelser, inför 1 ny bestämmelse och tar bort 2 bestämmelser.")
         self.assertEqual(se.summary([{"op": "removed"}]), "Tar bort 1 bestämmelse.")
+        # removed heading counted; a chapter heading that moves to another § file is not a change
+        moved = [{"op": "removed", "before": "## 3 kap. X\n\n### R\n\n1 § a", "after": ""},
+                 {"op": "modified", "before": "2 § b", "after": "## 3 kap. X\n\n2 § b"}]
+        self.assertEqual(se.summary(moved), "Ändrar 1 bestämmelse och tar bort 1 bestämmelse och 1 rubrik.")
 
     def test_decided_by(self):
         self.assertEqual(se.decided_by("Lag (2025:736) om ändring"), "riksdagen")
@@ -95,6 +99,17 @@ class Swedish(unittest.TestCase):
         self.assertEqual(eu["förordning (EU) 2016/679"], "https://eur-lex.europa.eu/eli/reg/2016/679/oj")
         self.assertEqual(se.riksdagen_sfs_url("1962:700"), "https://data.riksdagen.se/dokument/sfs-1962-700.html")
         self.assertIsNone(se.riksdagen_sfs_url("1736:0123 1"))
+
+
+class Decision(unittest.TestCase):
+    def test_notis_is_sanitized(self):
+        raw = '<p>Ja &amp; nej</p><script>x()</script><ul><li onclick="y">a<b>b</b></li></ul>'
+        self.assertEqual(se.safe_notis(raw), "<p>Ja &amp; nej</p>x()<ul><li>ab</li></ul>")
+
+    def test_vote_sides(self):
+        t = {"table": {"tbody": {"tr": [{"th": "S", "td": ["105", "0", "0", "1"]}, {"th": "V", "td": ["0", "21", "0", "0"]},
+                                        {"th": "-", "td": ["5", "4", "0", "0"]}]}}}
+        self.assertEqual(se.vote_sides(t), {"Ja": ["S"], "Nej": ["V"]})
 
 
 class Render(unittest.TestCase):

@@ -116,6 +116,10 @@ def main():
     events = lexifina.future_events(repo)
     changes = [{"corpus": c["id"], **ch} for ch in adapter.changes(events, reg)]
     sanity(events, changes)
+    if hasattr(adapter, "decision"):
+        print("fetching decisions from riksdagen", file=sys.stderr)
+        for ch in changes:
+            ch["decision"] = adapter.decision(ch["prep"], Path(a.cache) / "riksdagen")
 
     version = {
         "version": next_version(today, prev),

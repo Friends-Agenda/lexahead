@@ -60,6 +60,7 @@ def build_model(data, today):
             "prep": c["prep"], "changes": []})
         a["changes"].append(c)
         a["prep"] = a["prep"] or c["prep"]
+        a["decision"] = a.get("decision") or c.get("decision")
         law = laws.setdefault(c["law"], {"sfs": c["law"], "slug": slug(c["law"]), "title": c["law_title"],
                                          "department": c["department"], "source": c["law_source"], "changes": []})
         law["changes"].append(c)
@@ -416,6 +417,28 @@ class Site:
         return (f'<aside class="explanation" aria-label="Förklaring"><p class="explanation__label">Förklaring – inte lagtext</p>'
                 f'<p>{esc(c["explanation"])}</p></aside>')
 
+    def decision(self, dec):
+        """Riksdagen's own summary of the decision (not ours, not law text) plus how the parties voted."""
+        if not dec:
+            return ""
+        won = ", <strong>som blev riksdagens beslut</strong>"
+        def sides(v):
+            labels = {"Ja": "Ja till utskottets förslag" + (won if v["yes_won"] else ""),
+                      "Nej": "Nej, ville något annat" + ("" if v["yes_won"] else won), "Avstod": "Avstod"}
+            return "".join(f'<li>{labels[k]}: {esc(", ".join(v["sides"][k]))}</li>' for k in labels if v["sides"].get(k))
+        votes = "".join(f'<li><p class="votes__q">{esc(v["title"])}</p><ul>{sides(v)}</ul>'
+                        f'<p class="small"><a href="{esc(v["url"])}">Hela omröstningen: {esc(v["title"])}</a></p></li>'
+                        for v in dec["votes"])
+        votes = (f'<h3>Så röstade partierna</h3>'
+                 f'<p class="small">I riksdagen röstar man ja eller nej till utskottets förslag. Nej betyder att partiet '
+                 f'ville något annat, oftast ett eget motförslag (en reservation). Partierna visas efter hur de flesta '
+                 f'av deras ledamöter röstade.</p><ul class="votes">{votes}</ul>') if votes else ""
+        return (f'<aside class="explanation decision" aria-labelledby="dec-h">'
+                f'<p class="explanation__label">Riksdagens sammanfattning – inte lagtext</p>'
+                f'<h2 id="dec-h">{esc(dec["headline"])}</h2>{dec["notis"]}{votes}'
+                f'<p class="muted small">Källa: <a href="{esc(dec["url"])}">betänkande {esc(dec["bet"])}</a>, '
+                f'Sveriges riksdag. Sammanfattningen gäller hela betänkandet, som kan omfatta fler lagar än den här.</p></aside>')
+
     def facts(self, rows):
         return '<dl class="facts">' + "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in rows if v) + "</dl>"
 
@@ -451,7 +474,7 @@ class Site:
         body = (f'<div class="wrap page-head">{self.back(a["dates"][-1])}'
                 f'<div class="card__tags">{self.tags(a, a["changes"])}</div>'
                 f'<h1>{esc(se.short_title(title))}</h1><p class="lead official">{esc(title)}</p>{facts}</div>'
-                f'<div class="wrap wrap--text">{legend}{"".join(parts)}</div>')
+                f'<div class="wrap wrap--text">{self.decision(a.get("decision"))}{legend}{"".join(parts)}</div>')
         self.page(f"forfattning/{a['slug']}/", se.short_title(title), body,
                   description=f"{se.short_title(title)}: vad som ändras och när ({when}).")
 

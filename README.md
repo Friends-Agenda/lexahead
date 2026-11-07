@@ -44,9 +44,17 @@ bygget säger ifrån om fler slås på, så att URL-strukturen (t.ex. `/eu/...`)
 Varje ändring i `data/upcoming.json` har fältet `explanation: null`, och sidmallen har en plats för den
 (`Site.explanation`), tydligt märkt "Förklaring – inte lagtext". Den visas bara när fältet har innehåll.
 
+### Riksdagens sammanfattning
+
+För lagar med ett betänkande hämtar bygget riksdagens egen sammanfattning (notis) och partiernas röster från
+`https://data.riksdagen.se/dokumentstatus/<id>.json` (sparas i `.cache/riksdagen/`) och visar dem ordagrant
+på författningssidan, märkt "inte lagtext". **Inga AI-genererade sammanfattningar**: lexAhead citerar bara källor.
+Förordningar saknar betänkande och får därför ingen sammanfattning.
+
 ## Planerat
 
-- **Förklaringar i klarspråk** av vad varje ändring betyder (se ovan). Ska märkas tydligt som "inte lagtext".
+- **Förklaringar** av vad varje ändring betyder, men bara citerade ur källor (till exempel propositionens
+  författningskommentar, tillskriven regeringen). Ska märkas tydligt som "inte lagtext".
 - **Diff för ändringar utan datum** (`/ej-satt-datum/`). I dag visas bara vilka paragrafer som berörs,
   eftersom lexifina/sweden-law inte har med den nya lydelsen för bestämmelser som ska börja gälla
   "den dag som regeringen bestämmer" (`data/undated.csv` har bara markörerna, och `main` har bara den nu gällande texten).
