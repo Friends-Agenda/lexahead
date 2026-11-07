@@ -553,6 +553,9 @@ lexifina/sweden-law uppdateras, och varje natt så att datum och "om X dagar" st
 <h2 id="tillganglighet">Tillgänglighet</h2>
 <p>lexAhead ska gå att använda för alla. Målet är att uppfylla WCAG 2.2 på nivå AA: sidan fungerar med tangentbord och skärmläsare,
 utan JavaScript, med förstorad text och i mörkt läge. Ändringar markeras aldrig bara med färg. Om något inte fungerar för dig vill vi veta det.</p>
+<h2>Vem står bakom?</h2>
+<p>lexAhead är ett fristående projekt av Philip Lilius, byggt för att göra kommande lagändringar lättare att följa för alla.
+Mer om mig och andra projekt finns på <a href="https://philip.lilius.io">philip.lilius.io</a>.</p>
 <h2>Typsnitt</h2>
 <p>IBM Plex, under <a href="{self.href('assets/fonts/OFL.txt')}">SIL Open Font License</a>.</p>
 </div>"""
