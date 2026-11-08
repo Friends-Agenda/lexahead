@@ -251,6 +251,7 @@ class Site:
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="wordmark" href="{self.href()}" aria-label="lexAhead, startsida"><span aria-hidden="true">lex<b>Ahead</b><i class="wordmark__arrow">→</i></span></a>
+    <a class="byline" href="https://www.friendsagenda.se">från Friends Agenda</a>
     <nav aria-label="Huvudmeny"><ul class="nav">{links}</ul></nav>
     <button class="theme-toggle" type="button" hidden></button>
   </div>

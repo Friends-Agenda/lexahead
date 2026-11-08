@@ -285,10 +285,13 @@ del.whole { background: none; color: var(--ink-2); padding: 0; text-decoration-t
 
 /* theme toggle */
 .site-header nav { margin-left: auto; }
+.byline { display: inline-flex; align-items: center; min-height: 24px; margin-left: -0.9rem; font: 500 0.7rem/1 var(--mono); letter-spacing: 0.04em; color: var(--ink-2); text-decoration: none; }
+.byline:hover { color: var(--ink); text-decoration: underline; }
 @media (max-width: 40rem) {
   /* phones: toggle stays on the wordmark row, menu gets its own row */
   .theme-toggle { order: 2; margin-left: auto; }
-  .site-header nav { order: 3; flex-basis: 100%; margin-left: 0; }
+  .byline { order: 3; flex-basis: 100%; margin: -0.6rem 0 0; }
+  .site-header nav { order: 4; flex-basis: 100%; margin-left: 0; }
 }
 .theme-toggle { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 50%; cursor: pointer; }
 .theme-toggle:hover { border-color: var(--ink-2); }
