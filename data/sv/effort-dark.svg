@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="752" viewBox="0 0 880 752" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif">
+<rect x="0.5" y="0.5" width="879" height="751" rx="6" fill="#0d1117" stroke="#3d444d"/>
+<text x="24" y="38" font-size="16" font-weight="600" fill="#f0f6fc">Svensk rätt som git-historik</text>
+<rect x="587.3" y="24.5" width="138" height="20" rx="10" fill="none" stroke="#3d444d"/>
+<text x="656.3" y="38.5" font-size="11.5" font-weight="500" text-anchor="middle" fill="#9198a1">data t.o.m. 6 nov. 2026</text>
+<rect x="733.2" y="24.5" width="123" height="20" rx="10" fill="none" stroke="#3d444d"/>
+<text x="794.6" y="38.5" font-size="11.5" font-weight="500" text-anchor="middle" fill="#9198a1">aktualitet: aktuell</text>
+<rect x="24.5" y="60.5" width="831" height="58" rx="6" fill="#0d1117" stroke="#3d444d"/>
+<text x="40.0" y="87" font-size="20" font-weight="600" fill="#f0f6fc">11 153</text>
+<text x="40.0" y="106" font-size="12" fill="#9198a1">författningar</text>
+<line x1="190.4" y1="61" x2="190.4" y2="118" stroke="#3d444d"/>
+<text x="206.4" y="87" font-size="20" font-weight="600" fill="#f0f6fc">15 543</text>
+<text x="206.4" y="106" font-size="12" fill="#9198a1">ändringar, som commits</text>
+<line x1="356.8" y1="61" x2="356.8" y2="118" stroke="#3d444d"/>
+<text x="372.8" y="87" font-size="20" font-weight="600" fill="#f0f6fc">109 667</text>
+<text x="372.8" y="106" font-size="12" fill="#9198a1">filer med bestämmelser</text>
+<line x1="523.2" y1="61" x2="523.2" y2="118" stroke="#3d444d"/>
+<text x="539.2" y="87" font-size="20" font-weight="600" fill="#f0f6fc">8 109</text>
+<text x="539.2" y="106" font-size="12" fill="#9198a1">upphov: lagar och utgivare</text>
+<line x1="689.6" y1="61" x2="689.6" y2="118" stroke="#3d444d"/>
+<text x="705.6" y="87" font-size="20" font-weight="600" fill="#f0f6fc">1723–2026</text>
+<text x="705.6" y="106" font-size="12" fill="#9198a1">års historik</text>
+<rect x="24.5" y="134.5" width="831" height="248" rx="6" fill="#0d1117" stroke="#3d444d"/>
+<text x="40.5" y="160.5" font-size="14" font-weight="600" fill="#f0f6fc">Ändringar per år för ikraftträdande</text>
+<line x1="80.5" y1="330.5" x2="839.5" y2="330.5" stroke="#3d444d" stroke-width="1"/>
+<text x="72.5" y="334.5" font-size="11" text-anchor="end" fill="#9198a1">0</text>
+<line x1="80.5" y1="255.5" x2="839.5" y2="255.5" stroke="#3d444d" stroke-width="0.6" stroke-dasharray="3 3"/>
+<text x="72.5" y="259.5" font-size="11" text-anchor="end" fill="#9198a1">1 000</text>
+<line x1="80.5" y1="180.5" x2="839.5" y2="180.5" stroke="#3d444d" stroke-width="0.6" stroke-dasharray="3 3"/>
+<text x="72.5" y="184.5" font-size="11" text-anchor="end" fill="#9198a1">2 000</text>
+<rect x="80.75" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1723: ändringar som trädde i kraft: 1</title></rect>
+<rect x="113.21" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1736: ändringar som trädde i kraft: 1</title></rect>
+<text x="149.2" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">1750</text>
+<rect x="165.64" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1757: ändringar som trädde i kraft: 1</title></rect>
+<text x="274.0" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">1800</text>
+<rect x="297.96" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1810: ändringar som trädde i kraft: 2</title></rect>
+<rect x="325.43" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1821: ändringar som trädde i kraft: 1</title></rect>
+<rect x="340.41" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1827: ändringar som trädde i kraft: 1</title></rect>
+<rect x="342.90" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1828: ändringar som trädde i kraft: 1</title></rect>
+<rect x="345.40" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1829: ändringar som trädde i kraft: 1</title></rect>
+<rect x="357.88" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1834: ändringar som trädde i kraft: 1</title></rect>
+<rect x="372.86" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1840: ändringar som trädde i kraft: 1</title></rect>
+<rect x="382.85" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1844: ändringar som trädde i kraft: 1</title></rect>
+<rect x="392.84" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1848: ändringar som trädde i kraft: 1</title></rect>
+<text x="398.8" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">1850</text>
+<rect x="400.33" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1851: ändringar som trädde i kraft: 1</title></rect>
+<rect x="410.32" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1855: ändringar som trädde i kraft: 1</title></rect>
+<rect x="422.80" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1860: ändringar som trädde i kraft: 1</title></rect>
+<rect x="425.30" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1861: ändringar som trädde i kraft: 2</title></rect>
+<rect x="430.29" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1863: ändringar som trädde i kraft: 1</title></rect>
+<rect x="435.28" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1865: ändringar som trädde i kraft: 1</title></rect>
+<rect x="447.77" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1870: ändringar som trädde i kraft: 2</title></rect>
+<rect x="452.76" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1872: ändringar som trädde i kraft: 1</title></rect>
+<rect x="455.26" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1873: ändringar som trädde i kraft: 1</title></rect>
+<rect x="457.75" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1874: ändringar som trädde i kraft: 1</title></rect>
+<rect x="467.74" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1878: ändringar som trädde i kraft: 1</title></rect>
+<rect x="475.23" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1881: ändringar som trädde i kraft: 1</title></rect>
+<rect x="480.22" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1883: ändringar som trädde i kraft: 1</title></rect>
+<rect x="510.18" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1895: ändringar som trädde i kraft: 2</title></rect>
+<rect x="517.67" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1898: ändringar som trädde i kraft: 2</title></rect>
+<rect x="520.17" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1899: ändringar som trädde i kraft: 3</title></rect>
+<rect x="522.67" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1900: ändringar som trädde i kraft: 1</title></rect>
+<text x="523.7" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">1900</text>
+<rect x="525.16" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1901: ändringar som trädde i kraft: 1</title></rect>
+<rect x="532.65" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1904: ändringar som trädde i kraft: 3</title></rect>
+<rect x="535.15" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1905: ändringar som trädde i kraft: 1</title></rect>
+<rect x="537.65" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1906: ändringar som trädde i kraft: 2</title></rect>
+<rect x="540.14" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1907: ändringar som trädde i kraft: 2</title></rect>
+<rect x="545.14" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1909: ändringar som trädde i kraft: 3</title></rect>
+<rect x="547.63" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1910: ändringar som trädde i kraft: 4</title></rect>
+<rect x="550.13" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1911: ändringar som trädde i kraft: 2</title></rect>
+<rect x="552.63" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1912: ändringar som trädde i kraft: 4</title></rect>
+<rect x="555.12" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1913: ändringar som trädde i kraft: 3</title></rect>
+<rect x="560.12" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1915: ändringar som trädde i kraft: 1</title></rect>
+<rect x="562.61" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1916: ändringar som trädde i kraft: 3</title></rect>
+<rect x="565.11" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1917: ändringar som trädde i kraft: 2</title></rect>
+<rect x="567.61" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1918: ändringar som trädde i kraft: 6</title></rect>
+<rect x="570.10" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1919: ändringar som trädde i kraft: 2</title></rect>
+<rect x="572.60" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1920: ändringar som trädde i kraft: 5</title></rect>
+<rect x="575.10" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1921: ändringar som trädde i kraft: 8</title></rect>
+<rect x="577.60" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1922: ändringar som trädde i kraft: 2</title></rect>
+<rect x="580.09" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1923: ändringar som trädde i kraft: 1</title></rect>
+<rect x="582.59" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1924: ändringar som trädde i kraft: 4</title></rect>
+<rect x="585.09" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1925: ändringar som trädde i kraft: 2</title></rect>
+<rect x="587.58" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1926: ändringar som trädde i kraft: 8</title></rect>
+<rect x="590.08" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1927: ändringar som trädde i kraft: 6</title></rect>
+<rect x="592.58" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1928: ändringar som trädde i kraft: 6</title></rect>
+<rect x="595.07" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1929: ändringar som trädde i kraft: 6</title></rect>
+<rect x="597.57" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1930: ändringar som trädde i kraft: 4</title></rect>
+<rect x="600.07" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1931: ändringar som trädde i kraft: 3</title></rect>
+<rect x="602.56" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1932: ändringar som trädde i kraft: 4</title></rect>
+<rect x="605.06" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1933: ändringar som trädde i kraft: 11</title></rect>
+<rect x="607.56" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1934: ändringar som trädde i kraft: 6</title></rect>
+<rect x="610.05" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1935: ändringar som trädde i kraft: 13</title></rect>
+<rect x="612.55" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1936: ändringar som trädde i kraft: 4</title></rect>
+<rect x="615.05" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1937: ändringar som trädde i kraft: 2</title></rect>
+<rect x="617.54" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1938: ändringar som trädde i kraft: 5</title></rect>
+<rect x="620.04" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1939: ändringar som trädde i kraft: 5</title></rect>
+<rect x="622.54" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1940: ändringar som trädde i kraft: 11</title></rect>
+<rect x="625.03" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1941: ändringar som trädde i kraft: 11</title></rect>
+<rect x="627.53" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1942: ändringar som trädde i kraft: 14</title></rect>
+<rect x="630.03" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1943: ändringar som trädde i kraft: 3</title></rect>
+<rect x="632.52" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1944: ändringar som trädde i kraft: 6</title></rect>
+<rect x="635.02" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1945: ändringar som trädde i kraft: 3</title></rect>
+<rect x="637.52" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1946: ändringar som trädde i kraft: 7</title></rect>
+<rect x="640.01" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1947: ändringar som trädde i kraft: 9</title></rect>
+<rect x="642.51" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1948: ändringar som trädde i kraft: 13</title></rect>
+<rect x="645.01" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1949: ändringar som trädde i kraft: 9</title></rect>
+<rect x="647.50" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1950: ändringar som trädde i kraft: 15</title></rect>
+<text x="648.5" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">1950</text>
+<rect x="650.00" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1951: ändringar som trädde i kraft: 14</title></rect>
+<rect x="652.50" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1952: ändringar som trädde i kraft: 6</title></rect>
+<rect x="654.99" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1953: ändringar som trädde i kraft: 7</title></rect>
+<rect x="657.49" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1954: ändringar som trädde i kraft: 14</title></rect>
+<rect x="659.99" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1955: ändringar som trädde i kraft: 16</title></rect>
+<rect x="662.48" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1956: ändringar som trädde i kraft: 11</title></rect>
+<rect x="664.98" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1957: ändringar som trädde i kraft: 11</title></rect>
+<rect x="667.48" y="328.8" width="2.00" height="1.7" rx="0.8" fill="#2ea043"><title>1958: ändringar som trädde i kraft: 23</title></rect>
+<rect x="669.97" y="328.9" width="2.00" height="1.6" rx="0.8" fill="#2ea043"><title>1959: ändringar som trädde i kraft: 22</title></rect>
+<rect x="672.47" y="328.1" width="2.00" height="2.4" rx="0.8" fill="#2ea043"><title>1960: ändringar som trädde i kraft: 32</title></rect>
+<rect x="674.97" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1961: ändringar som trädde i kraft: 16</title></rect>
+<rect x="677.46" y="328.3" width="2.00" height="2.2" rx="0.8" fill="#2ea043"><title>1962: ändringar som trädde i kraft: 29</title></rect>
+<rect x="679.96" y="329.0" width="2.00" height="1.5" rx="0.8" fill="#2ea043"><title>1963: ändringar som trädde i kraft: 16</title></rect>
+<rect x="682.46" y="328.2" width="2.00" height="2.3" rx="0.8" fill="#2ea043"><title>1964: ändringar som trädde i kraft: 31</title></rect>
+<rect x="684.95" y="328.4" width="2.00" height="2.1" rx="0.8" fill="#2ea043"><title>1965: ändringar som trädde i kraft: 28</title></rect>
+<rect x="687.45" y="328.9" width="2.00" height="1.6" rx="0.8" fill="#2ea043"><title>1966: ändringar som trädde i kraft: 22</title></rect>
+<rect x="689.95" y="327.8" width="2.00" height="2.7" rx="0.8" fill="#2ea043"><title>1967: ändringar som trädde i kraft: 36</title></rect>
+<rect x="692.44" y="327.9" width="2.00" height="2.5" rx="0.8" fill="#2ea043"><title>1968: ändringar som trädde i kraft: 34</title></rect>
+<rect x="694.94" y="328.9" width="2.00" height="1.6" rx="0.8" fill="#2ea043"><title>1969: ändringar som trädde i kraft: 21</title></rect>
+<rect x="697.44" y="328.2" width="2.00" height="2.3" rx="0.8" fill="#2ea043"><title>1970: ändringar som trädde i kraft: 31</title></rect>
+<rect x="699.93" y="328.6" width="2.00" height="1.9" rx="0.8" fill="#2ea043"><title>1971: ändringar som trädde i kraft: 26</title></rect>
+<rect x="702.43" y="328.6" width="2.00" height="1.9" rx="0.8" fill="#2ea043"><title>1972: ändringar som trädde i kraft: 25</title></rect>
+<rect x="704.93" y="327.6" width="2.00" height="2.9" rx="0.8" fill="#2ea043"><title>1973: ändringar som trädde i kraft: 39</title></rect>
+<rect x="707.42" y="327.9" width="2.00" height="2.6" rx="0.8" fill="#2ea043"><title>1974: ändringar som trädde i kraft: 35</title></rect>
+<rect x="709.92" y="326.8" width="2.00" height="3.7" rx="0.8" fill="#2ea043"><title>1975: ändringar som trädde i kraft: 49</title></rect>
+<rect x="712.42" y="327.9" width="2.00" height="2.6" rx="0.8" fill="#2ea043"><title>1976: ändringar som trädde i kraft: 35</title></rect>
+<rect x="714.91" y="327.5" width="2.00" height="3.0" rx="0.8" fill="#2ea043"><title>1977: ändringar som trädde i kraft: 40</title></rect>
+<rect x="717.41" y="327.2" width="2.00" height="3.3" rx="0.8" fill="#2ea043"><title>1978: ändringar som trädde i kraft: 44</title></rect>
+<rect x="719.91" y="327.0" width="2.00" height="3.5" rx="0.8" fill="#2ea043"><title>1979: ändringar som trädde i kraft: 47</title></rect>
+<rect x="722.40" y="328.0" width="2.00" height="2.5" rx="0.8" fill="#2ea043"><title>1980: ändringar som trädde i kraft: 33</title></rect>
+<rect x="724.90" y="327.1" width="2.00" height="3.5" rx="0.8" fill="#2ea043"><title>1981: ändringar som trädde i kraft: 46</title></rect>
+<rect x="727.40" y="326.6" width="2.00" height="3.9" rx="0.8" fill="#2ea043"><title>1982: ändringar som trädde i kraft: 52</title></rect>
+<rect x="729.89" y="325.9" width="2.00" height="4.7" rx="0.8" fill="#2ea043"><title>1983: ändringar som trädde i kraft: 62</title></rect>
+<rect x="732.39" y="323.3" width="2.00" height="7.2" rx="0.8" fill="#2ea043"><title>1984: ändringar som trädde i kraft: 96</title></rect>
+<rect x="734.89" y="321.8" width="2.00" height="8.7" rx="0.8" fill="#2ea043"><title>1985: ändringar som trädde i kraft: 116</title></rect>
+<rect x="737.38" y="319.8" width="2.00" height="10.7" rx="0.8" fill="#2ea043"><title>1986: ändringar som trädde i kraft: 143</title></rect>
+<rect x="739.88" y="296.0" width="2.00" height="34.5" rx="0.8" fill="#2ea043"><title>1987: ändringar som trädde i kraft: 460</title></rect>
+<rect x="742.38" y="293.0" width="2.00" height="37.5" rx="0.8" fill="#2ea043"><title>1988: ändringar som trädde i kraft: 500</title></rect>
+<rect x="744.87" y="299.6" width="2.00" height="30.9" rx="0.8" fill="#2ea043"><title>1989: ändringar som trädde i kraft: 412</title></rect>
+<rect x="747.37" y="309.0" width="2.00" height="21.5" rx="0.8" fill="#2ea043"><title>1990: ändringar som trädde i kraft: 287</title></rect>
+<rect x="749.87" y="295.9" width="2.00" height="34.6" rx="0.8" fill="#2ea043"><title>1991: ändringar som trädde i kraft: 462</title></rect>
+<rect x="752.36" y="294.9" width="2.00" height="35.6" rx="0.8" fill="#2ea043"><title>1992: ändringar som trädde i kraft: 475</title></rect>
+<rect x="754.86" y="297.5" width="2.00" height="33.0" rx="0.8" fill="#2ea043"><title>1993: ändringar som trädde i kraft: 440</title></rect>
+<rect x="757.36" y="290.5" width="2.00" height="40.0" rx="0.8" fill="#2ea043"><title>1994: ändringar som trädde i kraft: 533</title></rect>
+<rect x="759.85" y="299.8" width="2.00" height="30.7" rx="0.8" fill="#2ea043"><title>1995: ändringar som trädde i kraft: 409</title></rect>
+<rect x="762.35" y="300.4" width="2.00" height="30.1" rx="0.8" fill="#2ea043"><title>1996: ändringar som trädde i kraft: 401</title></rect>
+<rect x="764.85" y="309.9" width="2.00" height="20.6" rx="0.8" fill="#2ea043"><title>1997: ändringar som trädde i kraft: 274</title></rect>
+<rect x="767.35" y="306.3" width="2.00" height="24.2" rx="0.8" fill="#2ea043"><title>1998: ändringar som trädde i kraft: 323</title></rect>
+<rect x="769.84" y="305.9" width="2.00" height="24.6" rx="0.8" fill="#2ea043"><title>1999: ändringar som trädde i kraft: 328</title></rect>
+<rect x="772.34" y="309.9" width="2.00" height="20.6" rx="0.8" fill="#2ea043"><title>2000: ändringar som trädde i kraft: 275</title></rect>
+<text x="773.3" y="346.5" font-size="11" text-anchor="middle" fill="#9198a1">2000</text>
+<rect x="774.84" y="307.7" width="2.00" height="22.8" rx="0.8" fill="#2ea043"><title>2001: ändringar som trädde i kraft: 304</title></rect>
+<rect x="777.33" y="313.4" width="2.00" height="17.1" rx="0.8" fill="#2ea043"><title>2002: ändringar som trädde i kraft: 228</title></rect>
+<rect x="779.83" y="316.6" width="2.00" height="13.9" rx="0.8" fill="#2ea043"><title>2003: ändringar som trädde i kraft: 186</title></rect>
+<rect x="782.33" y="313.6" width="2.00" height="16.9" rx="0.8" fill="#2ea043"><title>2004: ändringar som trädde i kraft: 225</title></rect>
+<rect x="784.82" y="313.3" width="2.00" height="17.2" rx="0.8" fill="#2ea043"><title>2005: ändringar som trädde i kraft: 229</title></rect>
+<rect x="787.32" y="309.3" width="2.00" height="21.2" rx="0.8" fill="#2ea043"><title>2006: ändringar som trädde i kraft: 283</title></rect>
+<rect x="789.82" y="308.0" width="2.00" height="22.5" rx="0.8" fill="#2ea043"><title>2007: ändringar som trädde i kraft: 300</title></rect>
+<rect x="792.31" y="293.0" width="2.00" height="37.5" rx="0.8" fill="#2ea043"><title>2008: ändringar som trädde i kraft: 500</title></rect>
+<rect x="794.81" y="309.0" width="2.00" height="21.5" rx="0.8" fill="#2ea043"><title>2009: ändringar som trädde i kraft: 287</title></rect>
+<rect x="797.31" y="308.8" width="2.00" height="21.7" rx="0.8" fill="#2ea043"><title>2010: ändringar som trädde i kraft: 289</title></rect>
+<rect x="799.80" y="301.1" width="2.00" height="29.4" rx="0.8" fill="#2ea043"><title>2011: ändringar som trädde i kraft: 392</title></rect>
+<rect x="802.30" y="313.8" width="2.00" height="16.7" rx="0.8" fill="#2ea043"><title>2012: ändringar som trädde i kraft: 223</title></rect>
+<rect x="804.80" y="318.4" width="2.00" height="12.1" rx="0.8" fill="#2ea043"><title>2013: ändringar som trädde i kraft: 161</title></rect>
+<rect x="807.29" y="315.2" width="2.00" height="15.3" rx="0.8" fill="#2ea043"><title>2014: ändringar som trädde i kraft: 204</title></rect>
+<rect x="809.79" y="314.0" width="2.00" height="16.5" rx="0.8" fill="#2ea043"><title>2015: ändringar som trädde i kraft: 220</title></rect>
+<rect x="812.29" y="312.2" width="2.00" height="18.3" rx="0.8" fill="#2ea043"><title>2016: ändringar som trädde i kraft: 244</title></rect>
+<rect x="814.78" y="315.1" width="2.00" height="15.4" rx="0.8" fill="#2ea043"><title>2017: ändringar som trädde i kraft: 205</title></rect>
+<rect x="817.28" y="300.6" width="2.00" height="29.9" rx="0.8" fill="#2ea043"><title>2018: ändringar som trädde i kraft: 398</title></rect>
+<rect x="819.78" y="310.2" width="2.00" height="20.2" rx="0.8" fill="#2ea043"><title>2019: ändringar som trädde i kraft: 270</title></rect>
+<rect x="822.27" y="310.4" width="2.00" height="20.1" rx="0.8" fill="#2ea043"><title>2020: ändringar som trädde i kraft: 268</title></rect>
+<rect x="824.77" y="312.2" width="2.00" height="18.3" rx="0.8" fill="#2ea043"><title>2021: ändringar som trädde i kraft: 244</title></rect>
+<rect x="827.27" y="298.1" width="2.00" height="32.4" rx="0.8" fill="#2ea043"><title>2022: ändringar som trädde i kraft: 432</title></rect>
+<rect x="829.76" y="308.2" width="2.00" height="22.3" rx="0.8" fill="#2ea043"><title>2023: ändringar som trädde i kraft: 297</title></rect>
+<rect x="832.26" y="304.2" width="2.00" height="26.2" rx="0.8" fill="#2ea043"><title>2024: ändringar som trädde i kraft: 350</title></rect>
+<rect x="834.76" y="293.0" width="2.00" height="37.5" rx="0.8" fill="#2ea043"><title>2025: ändringar som trädde i kraft: 500</title></rect>
+<rect x="837.25" y="245.3" width="2.00" height="85.2" rx="0.8" fill="#2ea043"><title>2026: ändringar som trädde i kraft: 1 136</title></rect>
+<text x="838.3" y="239.3" font-size="11" font-weight="600" text-anchor="middle" fill="#f0f6fc">1 136 år 2026</text>
+<text x="40.5" y="368.5" font-size="11.5" fill="#9198a1">Ändringar daterade efter dag för ikraftträdande: 15 543. Typ av historik: current-only.</text>
+<rect x="24.5" y="396.5" width="831" height="152" rx="6" fill="#0d1117" stroke="#3d444d"/>
+<text x="40.5" y="422.5" font-size="14" font-weight="600" fill="#f0f6fc">Fullständighet jämfört med officiella källor, 12 nov. 2026</text>
+<text x="40.5" y="446.5" font-size="13" fill="#f0f6fc">Grundlag</text>
+<text x="40.5" y="462.5" font-size="11.5" fill="#9198a1">i repositoriet</text>
+<g><title>Grundlag: 100 %</title><rect x="276.5" y="443.5" width="91.5" height="8" rx="4" fill="#262c36"/><rect x="276.5" y="443.5" width="91.5" height="8" rx="4" fill="#2ea043"/></g>
+<text x="424.0" y="450.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">100 %</text>
+<text x="40.5" y="482.5" font-size="13" fill="#f0f6fc">Centrala balkar och lagar</text>
+<text x="40.5" y="498.5" font-size="11.5" fill="#9198a1">andel av de centrala lagarna</text>
+<g><title>Centrala balkar och lagar: 100 %</title><rect x="276.5" y="479.5" width="91.5" height="8" rx="4" fill="#262c36"/><rect x="276.5" y="479.5" width="91.5" height="8" rx="4" fill="#2ea043"/></g>
+<text x="424.0" y="486.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">100 %</text>
+<text x="40.5" y="518.5" font-size="13" fill="#f0f6fc">Nationella författningar</text>
+<text x="40.5" y="534.5" font-size="11.5" fill="#9198a1">andel av officiellt totalantal</text>
+<g><title>Nationella författningar: 96 %</title><rect x="276.5" y="515.5" width="91.5" height="8" rx="4" fill="#262c36"/><rect x="276.5" y="515.5" width="87.8" height="8" rx="4" fill="#2ea043"/></g>
+<text x="424.0" y="522.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">96 %</text>
+<text x="456.0" y="446.5" font-size="13" fill="#f0f6fc">Regionala författningar</text>
+<text x="456.0" y="462.5" font-size="11.5" fill="#9198a1">lagstiftande enheter som ingår</text>
+<g><title>Regionala författningar: 0 %</title><rect x="692.0" y="443.5" width="91.5" height="8" rx="4" fill="#262c36"/></g>
+<text x="839.5" y="450.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">0 %</text>
+<text x="456.0" y="482.5" font-size="13" fill="#f0f6fc">Rättspraxis</text>
+<text x="456.0" y="498.5" font-size="11.5" fill="#9198a1">högsta domstolar som ingår</text>
+<g><title>Rättspraxis: 0 %</title><rect x="692.0" y="479.5" width="91.5" height="8" rx="4" fill="#262c36"/></g>
+<text x="839.5" y="486.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">0 %</text>
+<rect x="24.5" y="562.5" width="831" height="152" rx="6" fill="#0d1117" stroke="#3d444d"/>
+<text x="40.5" y="588.5" font-size="14" font-weight="600" fill="#f0f6fc">Riktighet i det som ingår</text>
+<text x="40.5" y="612.5" font-size="13" fill="#f0f6fc">Ändringar med ikraftträdandedag</text>
+<text x="40.5" y="628.5" font-size="11.5" fill="#9198a1">andel av ändringarna</text>
+<g><title>Ändringar med ikraftträdandedag: 100 %</title><rect x="276.5" y="609.5" width="91.5" height="8" rx="4" fill="#262c36"/><rect x="276.5" y="609.5" width="91.5" height="8" rx="4" fill="#2ea043"/></g>
+<text x="424.0" y="616.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">100 %</text>
+<text x="40.5" y="648.5" font-size="13" fill="#f0f6fc">Ändringar med officiell källa</text>
+<text x="40.5" y="664.5" font-size="11.5" fill="#9198a1">Source-rad eller länk i commit</text>
+<g><title>Ändringar med officiell källa: 72 %</title><rect x="276.5" y="645.5" width="91.5" height="8" rx="4" fill="#262c36"/><rect x="276.5" y="645.5" width="65.5" height="8" rx="4" fill="#2ea043"/></g>
+<text x="424.0" y="652.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">72 %</text>
+<text x="40.5" y="684.5" font-size="13" fill="#f0f6fc">Kontrollerad mot officiell källa</text>
+<text x="40.5" y="700.5" font-size="11.5" fill="#9198a1">datumet repositoriet anger</text>
+<text x="424.0" y="688.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">6 nov. 2026</text>
+<text x="456.0" y="612.5" font-size="13" fill="#f0f6fc">Korpusar för landet i global-law</text>
+<text x="456.0" y="628.5" font-size="11.5" fill="#9198a1">nationella författningar: 1</text>
+<text x="839.5" y="616.5" font-size="13" font-weight="600" text-anchor="end" fill="#f0f6fc">1</text>
+<text x="24" y="736" font-size="11.5" fill="#9198a1">lexifina/sweden-law vid 9081a68, genererad 2026-11-13. Utan dokumentationscommits. Omfattning: from 1723-10-16</text>
+</svg>
